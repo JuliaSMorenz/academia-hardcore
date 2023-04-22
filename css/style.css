@@ -1,0 +1,484 @@
+
+:root{
+--primary-dark: #101417;
+
+--primary-brand: #B91F33;
+--primary-brand-light: #d8213a;
+--primary-brand-dark: #8a0e1e;
+
+--gray-light: #E1E1E1;
+--gray-medium: #666666;
+--contrast: #E0E34C;
+}
+
+*{
+    font-family: 'Teko', sans-serif;
+    text-transform: uppercase;
+}
+
+html{
+    scroll-behavior: smooth; /*faz os links âncoras navegar de forma suave*/
+}
+
+/******Ajuste de posição do link******/
+
+#academia, #contato{
+    scroll-margin-top: 160px;
+}
+
+#planos{
+    scroll-margin-top: 66px;
+}
+
+/******Ajuste de posição do link******/
+
+body{
+    margin: 0;
+    background-color: var(--primary-dark);
+}
+
+a{
+    text-decoration: none; /*retirando o sublinhado dos links*/
+}
+
+h1,h2,h3,h4,h5,h6{
+    margin: 0;
+}
+
+h2{
+    color: white;
+    font-size: 40px;
+}
+
+p{
+    color: var(--gray-light);
+    font-size: 18px;
+    line-height: 120%;
+}
+
+img{
+    display: block;
+}
+
+/*********Utilitários*********/
+.btn{
+    color: var(--gray-light);
+    background-color: var(--primary-brand);
+    padding: 10px 60px 6px 60px; /*top right bottom left*/
+    font-size: 18px;
+    border-radius: 3px;
+    display: inline-block;
+    transition: 0.7s;
+    border: solid 2px transparent;
+}
+
+.btn:hover{
+    background-color: var(--primary-brand-dark);
+    transform:scale(1.1);
+}
+
+.btn-outline{
+    color: white;
+    background-color: transparent;
+    padding: 10px 60px 6px 60px;
+    font-size: 18px;
+    border-radius: 3px;
+    display: inline-block;
+    border: solid 2px var(--primary-brand);
+    transition: 0.7s;
+    cursor: pointer;
+}
+
+.btn-outline:hover{
+    transform:scale(1.1);
+    background-color: var(--primary-dark);
+}
+
+.bg-light{
+    background-color: var(--gray-light);
+}
+
+.bg-light h2{
+    color: var(--primary-dark);
+}
+
+.bg-light p{
+    color: var(--gray-medium);
+}
+/*********Utilitários*********/
+
+.container{
+    max-width: 1140px;
+    margin: 0 auto;
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+    /*background-color: red;*/
+}
+
+.header{
+    width: 100%;
+    height: auto;
+    background-color: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(5px);
+    padding-top: 16px;
+    padding-bottom: 16px;
+    position: fixed;
+    top: 0;
+    z-index: 1000; /*Quantidade de camadas que esse item vai ter sobre os outros. Só funciona quando tem o POSITION*/
+    transition: 0.5s;
+}
+
+/*classe aplicada quando o usuário rola a página*/
+.header-scroll{
+    background-color: rgba(0, 0, 0, 0.7);
+    border-bottom: 1px solid var(--primary-brand-dark);
+    padding-top: 8px;
+    padding-bottom: 8px;
+    transition: 0.5s;
+}
+
+/*imagem do logo quando o usuário rola a página*/
+.header-scroll .logo img{
+    height: 50px;
+}
+
+.header .container{
+    display: flex;
+    justify-content: space-between; /*alinhamento no eixo X*/
+    align-items: center; /*alinhamento no eixo Y*/
+}
+
+/* Formatando os links que estão DENTRO do menu */
+.menu a{
+    color: white;
+    font-size: 18px;
+    font-weight: 700;
+    text-decoration: none;
+    margin-left: 111px;
+}
+
+.menu a span{
+    visibility: hidden;
+}
+
+.menu a:hover{
+    color: var(--primary-brand)
+}
+
+/*quando o item do menu está ativo
+.menu a:focus{
+    color:var(--contrast);
+} */
+
+/* .menu a:focus span{
+    visibility: visible;
+} */
+
+/****Slider****/
+.bx-wrapper{
+    border: none !important; /*retira a borda*/
+    box-shadow: none !important; /*retira a sombra*/
+}
+/****Slider****/
+
+.bg-1{
+    background-image: url(../img/background.jpg);
+}
+
+.bg-2{
+    background-image: url(../img/background-2.png);
+}
+
+.hero-section{
+    width: 100%;
+    height: 650px;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+}
+
+.hero-section h1{
+    color: var(--gray-light);
+    font-size: 96px;
+    line-height: 90%;
+}
+
+.hero-section p{
+    max-width: 790px;
+    color: var(--gray-light);
+    font-size: 24px;
+    line-height: 120%;
+}
+
+.hero-section .container{
+    /*posição em relação a ele mesmo*/
+    position: relative;
+    top: 52px;
+}
+
+.academia{
+    margin-top: 100px;
+    margin-bottom: 100px;
+    display: flex;
+    align-items: center;
+    column-gap: 24px; /*espaço entre colunas*/
+}
+
+.faca-parte{
+    padding: 40px 0;
+    position: relative; /*servir de referência para o position:absolute da imagem*/
+}
+
+.faca-parte .content{
+    max-width: 850px;
+}
+
+.faca-parte .image{
+    /*Posição em relação ao elemento PAI (desde que o pai também tenha position) caso contrário a referência será o BODY)*/
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+.bg-planos{
+    background-image: url(../img/bg-planos.jpg);
+    background-size: cover;
+}
+
+.planos{
+    padding: 60px 0;
+    text-align: center;
+}
+
+.text{
+    max-width: 946px;
+    margin: 0 auto;
+}
+
+.cards{
+    display: flex;
+    column-gap: 24px;
+}
+
+.card{
+    border: solid 1px var(--gray-light);
+    border-radius: 3px;
+    padding: 30px;
+    background-color: rgba(0, 0, 0, 0.3);
+    transition: 0.7s;
+}
+
+.card:hover{
+    transform: scale(1.07);
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.card h3{
+    color: white;
+    font-size: 32px;
+}
+
+.card ul{
+    color: var(--gray-light);
+    font-size: 18px;
+    text-align: left;
+    padding: 0; /*retirando padding padrão da lista (40px)*/
+    list-style-position: inside; /*marcador para dentro da lista*/
+    /*list-style-image: url(../img/twitter.svg);*/
+}
+
+.card a{
+    display: block;
+}
+
+.card a:hover{
+    transform: scale(1);
+}
+
+.preco{
+    color: white;
+    font-size: 32px;
+    font-weight: 700; /*bold*/
+}
+
+.destaque{
+    border: solid 3px var(--primary-brand);
+}
+.destaque .preco{
+    color: var(--contrast);
+}
+
+.fale-conosco{
+    display: flex;
+    column-gap: 24px;
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
+.fale-conosco input, .fale-conosco textarea{
+    color: var(--gray-light);
+    font-size: 18px;
+    display: block;
+    width: 100%;
+    height: 40px;
+    background-color: transparent;
+    border: solid 1px var(--gray-light);
+    border-radius: 3px;
+    margin-bottom: 10px;
+    padding: 10px;
+    box-sizing: border-box; /*não contabiliza borda e padding às dimensões*/
+}
+
+.fale-conosco textarea{
+    height: 140px;
+    resize: none; /*retira do textarea a possibilidade de redimensionamento*/
+}
+
+.footer{
+    background-color: var(--primary-brand);
+    padding: 15px 190px;
+    text-align: center;
+}
+
+.footer p{
+    margin: 0;
+}
+
+.social{
+    display: flex;
+    justify-content: center;
+    column-gap: 10px;
+    margin-top: 30px;
+    margin-bottom: 100px;
+}
+
+/*esconder o menu em telas de ATÉ 1024px*/
+@media (max-width: 1024px){
+    
+    .menu{
+        /* display: none; */
+        transform: translateX(-100%);
+        background-color: var(--primary-brand-dark);
+        position: absolute;
+        top: 100px;
+        left: 0;
+        width: 100%;
+        height: 100vh; /*view height*/
+        transition: 0.5s ease-out;
+    }
+
+    .menu a{
+        display: block;
+        margin: 0;
+        padding: 25px 15px;
+        border-bottom: 2px solid var(--primary-dark);
+    }
+
+    /******Ajuste de posição do link******/
+    #contato{
+        scroll-margin-top: 127px;
+    }
+    
+    /******Ajuste de posição do link******/
+
+    .menu-open{
+        /* display: block; */
+        transform: translateX(0);
+    }
+
+    .bar{
+        width: 40px;
+        height: 3px;
+        background-color: white;
+        margin-bottom: 3px;
+        transition: 0.5s;
+    }
+
+    /*formatando as barras quando a Classe x tiver aplicada*/
+    .x .bar:first-child{
+        transform: rotate(45deg) translate(5px,3px);
+    }
+
+    .x .bar:nth-child(2){
+        opacity: 0;
+        transform: translateX(-200px);
+    }
+
+    .x .bar:last-child{
+        transform: rotate(-45deg) translate(5px,-3px);
+    }
+
+    .hero-section h1{
+        font-size: 64px;
+    }
+
+    .academia{
+        flex-direction: column;
+        row-gap: 24px;
+    }
+
+    .academia .content{
+        max-width: 558px;
+        /*text-align: justify; (texto justificado)
+        text-indent: 50px; (espaço inicial de parágrafo)*/
+    }
+
+    .academia img{
+        max-width: 100%; /*largura máxima será o tamanho da imagem*/
+    }
+
+    .faca-parte .content{
+        width: calc(100% - 200px);
+    }
+
+    .cards{
+        flex-direction: column;
+        row-gap: 30px;
+        align-items: center;
+    }
+
+    .card{
+        max-width: 360px;
+    }
+
+    .fale-conosco{
+        flex-direction: column;
+        row-gap: 30px;
+    }
+
+    iframe{
+        width: 100%;
+    }
+
+    .footer{
+        padding: 15px;
+    }
+}
+
+@media (max-width: 767px){
+
+    .hero-section{
+        height: 520px;
+    }
+
+    .hero-section h1{
+        font-size: 40px;
+    }
+
+    .hero-section p{
+        font-size: 18px;
+    }
+
+    .faca-parte .image{
+        display: none;
+    }
+
+    .faca-parte .content{
+        width: 100%;
+    }
+
+    .fale-conosco{
+        margin-top: 60px;
+        margin-bottom: 60px;
+    }
+}
